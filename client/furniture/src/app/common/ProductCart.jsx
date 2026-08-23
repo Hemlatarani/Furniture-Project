@@ -5,7 +5,7 @@ import { FaHeart } from "react-icons/fa";
 // import { cartContext } from '../MainContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCartData } from '../redux/slice/cartslice';
-import { addWishlist } from '../redux/slice/wishlistslice';
+import { addWishlist, removeWishlist } from '../redux/slice/wishlistslice';
 import { gsap } from 'gsap';
 import axios from 'axios';
 import { redirect } from 'next/navigation';
@@ -143,7 +143,7 @@ export default function ProductCart({ data,imagePath }) {
             </Link>
 
             <div className='pb-4 flex justify-center gap-2 relative z-10'>
-                <button onClick={() => dispatch(addWishlist(data))} className='bg-[#f9f5f2] hover:bg-[#c09578] hover:text-white transition-colors px-3 py-2 rounded-lg cursor-pointer'>
+                <button onClick={() => liked ? dispatch(removeWishlist(data._id)) : dispatch(addWishlist(data))} className='bg-[#f9f5f2] hover:bg-[#c09578] hover:text-white transition-colors px-3 py-2 rounded-lg cursor-pointer'>
                     <FaHeart className={liked ? 'text-red-500' : 'text-gray-400'} />
                 </button>
                 {

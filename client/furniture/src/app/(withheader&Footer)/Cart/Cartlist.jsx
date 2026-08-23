@@ -199,7 +199,7 @@ function CartLIstView() {
                                     </td>
 
                                     <td className='border px-4 py-2'>
-                                        Rs. {data.productPrice}
+                                        Rs. {}
                                     </td>
 
                                     <td className='border px-4 py-2 text-center'>

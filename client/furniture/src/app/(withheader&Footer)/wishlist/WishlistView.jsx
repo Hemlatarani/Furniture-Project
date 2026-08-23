@@ -27,8 +27,8 @@ export default function Wishlist() {
         axios.post(`${apiBaseurl}cart/add-to-cart`, cartObj, {
             headers: { Authorization: `Bearer ${token}` }
         })
-        .then((apiRes) => apiRes.data)
-        .then(() => dispatch(fetchCartData(token)))
+            .then((apiRes) => apiRes.data)
+            .then(() => dispatch(fetchCartData(token)))
     }
 
     return (
@@ -58,17 +58,17 @@ export default function Wishlist() {
                                 <tbody>
                                     {
                                         wishlist.map((item, index) => {
+                                            console.log(item.productImage)
                                             // check karo item cart mein hai ya nahi
-                                            let inCart = cart.find((c) => c.productNameId == item._id)
-                                            // check karo item wishlist mein already liked hai
-                                            let liked = wishlist.find((w) => w._id === item._id)
-
-                                            return (
-                                                <tr key={index} className='border w-full'>
-                                                    <td className='border text-[50px] text-center cursor-pointer' onClick={() => dispatch(removeWishlist(index))}>&times;</td>
-                                                    <td className='border'>
-                                                        <Link href={`/product/${item._id}`}>
-                                                            <img src={item.productImage} alt={item.productName} className='w-[100px] h-full mx-auto' />
+                                            let inCart = cart.find((cartItem) => cartItem.productNameId == item._id)
+                                            let liked = wishlist.find((wishItem) => wishItem._id === item._id)
+  return (
+            <tr key={index} className='border w-full'>
+        <td className='border text-[50px] text-center cursor-pointer' 
+        onClick={() => dispatch(removeWishlist(item._id))}>&times;</td>
+            <td className='border'>
+            <Link href={`/product/${item._id}`}>
+            <img src={`${apiBaseurl}${item.productImage}`} alt={item.productName} className='w-[100px] h-full mx-auto' />
                                                         </Link>
                                                     </td>
                                                     <td className='border text-center'>
@@ -79,7 +79,7 @@ export default function Wishlist() {
                                                     <td className='text-center flex items-center justify-center gap-2 py-4'>
                                                         {/* wishlist heart icon — liked ho toh red, nahi toh grey */}
                                                         <FaHeart
-                                                            onClick={() => liked ? dispatch(removeWishlist(index)) : dispatch(addWishlist(item))}
+                                                            onClick={() => liked ? dispatch(removeWishlist(item._id)) : dispatch(addWishlist(item))}
                                                             className={`cursor-pointer text-xl ${liked ? 'text-red-600' : 'text-gray-400'}`}
                                                         />
                                                         {/* cart mein hai toh "Added" dikhao, nahi toh button */}

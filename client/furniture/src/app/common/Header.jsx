@@ -17,6 +17,7 @@ import axios from "axios";
 export default function Header() {
 
   let cart = useSelector((mystore) => mystore.myCart.cart)
+  let wishlist = useSelector((store) => store.mywishlist.items)
 
   let counter = useSelector((myStore) => myStore.myCounter.count)
   let loginuser = useSelector((myStore) => myStore.user.user)
@@ -103,8 +104,10 @@ export default function Header() {
               </div>
               <div className="flex mr-5 py-2">
                 <Link href={"/wishlist"}>
-                  <button className="mx-2 text-2xl rounded-lg py-1 px-2 bg-white">
-                    <FaHeart className="border border-gray-200 text-4xl py-1 rounded-lg" /></button>
+                  <button className="mx-2 text-2xl rounded-lg py-1 px-2 bg-white relative">
+                    <FaHeart className="border border-gray-200 text-4xl py-1 rounded-lg" />
+                    {wishlist.length > 0 && <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">{wishlist.length}</span>}
+                  </button>
                 </Link>
                 <Link href="/Cart">
                   <div className="flex mx-2 justify-center rounded-lg py-2 border border-gray-200">
