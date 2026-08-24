@@ -8,7 +8,8 @@ export default function DorianShoe() {
   let pageName = "Dorian Shoe Rack"
   return (
     <>
-      <Breadcrumb pageName={pageName} />
+      {/* <Breadcrumb  /> */}
+      <Breadcrumb pageName={pageName}/>
       <DorianContent />
       <DorianProduct />
       <DorianUpsells />
