@@ -28,6 +28,8 @@ export default async function Home() {
   // console.log(productDetails);
 
   let categoryData = await categoryapi()
+  console.log(categoryData);
+  
   // console.log(categoryData[0]._id)
 
   // let homeOrder=await orderapi()
