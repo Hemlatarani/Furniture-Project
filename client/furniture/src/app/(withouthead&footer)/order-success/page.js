@@ -30,12 +30,16 @@ export default function OrderSuccess() {
 
                 {/* Heading */}
                 <h1 className="text-4xl font-extrabold text-gray-800 mb-2">Thank You! 🎉</h1>
-                <p className="text-gray-500 text-sm mb-6">Your order has been placed successfully.<br />We'll deliver it to you soon!</p>
+                <p className="text-gray-500 text-sm mb-6">
+                    Your order has been placed successfully.<br />
+                    We&apos;ll deliver it to you soon!
+                </p>
 
                 {/* Divider */}
                 <div className="flex items-center justify-center gap-2 mb-6">
                     <div className="h-px w-16 bg-gray-200"></div>
-                    <span className="text-gray-400 text-xs">What's next?</span>
+                    {/* <span className="text-gray-400 text-xs">What's next?</span> */}
+                    <span className="text-gray-400 text-xs">What&apos;s next?</span>
                     <div className="h-px w-16 bg-gray-200"></div>
                 </div>
 
