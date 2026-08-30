@@ -67,9 +67,9 @@ mongoose.connect(process.env.DBCONNECTION)
         adminPassword: process.env.ADMINPASSWORD
       })
     }
-    App.listen(process.env.PORT, () => {
-      console.log("server Started");
-    });
+    // App.listen(process.env.PORT, () => {
+    //   console.log("server Started");
+    // });
   })
   .catch((error) => {
     console.log(" MongoDB Connection Error:", error.message);
