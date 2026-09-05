@@ -81,67 +81,93 @@
 
 
 // module.exports=(App)
+// require("dotenv").config();
+
+// let express = require("express");
+// let mongoose = require("mongoose");
+// let App = express();
+// let cors = require("cors");
+
+// const { adminRoutes } = require("./App/routes/admin/adminRoutes");
+// const { adminModel } = require("./App/models/adminModel");
+// const { webRoutes } = require("./App/routes/website/webRoutes");
+
+// App.use(cors());
+
+// App.use((req, res, next) => {
+//   res.setHeader(
+//     "Cross-Origin-Opener-Policy",
+//     "same-origin-allow-popups"
+//   );
+//   next();
+// });
+
+// App.use(express.json());
+// App.use(express.urlencoded({ extended: true }));
+
+// // HOME ROUTE
+// App.get("/", (req, res) => {
+//   res.send("Backend is running successfully");
+// });
+
+// // ADMIN ROUTES
+// App.use("/admin", adminRoutes);
+
+// // UPLOAD FOLDERS
+// App.use("/uploads/category", express.static("uploads/category"));
+// App.use("/uploads/product", express.static("uploads/product"));
+// App.use("/uploads/subcategory", express.static("uploads/subcategory"));
+// App.use("/uploads/subsubcategory", express.static("uploads/subsubcategory"));
+
+// // WEBSITE ROUTES
+// App.use("/web", webRoutes);
+
+
+// // MONGODB CONNECTION
+// mongoose
+//   .connect(process.env.DBCONNECTION)
+//   .then(async () => {
+//     console.log("MongoDB Connected Successfully");
+
+//     let checkAdmin = await adminModel.findOne();
+
+//     if (!checkAdmin) {
+//       await adminModel.insertOne({
+//         adminEmail: process.env.ADMINEMAIL,
+//         adminPassword: process.env.ADMINPASSWORD,
+//       });
+//     }
+//   })
+//   .catch((error) => {
+//     console.log("MongoDB Connection Error:", error.message);
+//   });
+
+
+// // EXPORT APP FOR VERCEL
+// module.exports = App;
 require("dotenv").config();
 
-let express = require("express");
-let mongoose = require("mongoose");
-let App = express();
-let cors = require("cors");
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-const { adminRoutes } = require("./App/routes/admin/adminRoutes");
-const { adminModel } = require("./App/models/adminModel");
-const { webRoutes } = require("./App/routes/website/webRoutes");
+const App = express();
 
 App.use(cors());
-
-App.use((req, res, next) => {
-  res.setHeader(
-    "Cross-Origin-Opener-Policy",
-    "same-origin-allow-popups"
-  );
-  next();
-});
-
 App.use(express.json());
 App.use(express.urlencoded({ extended: true }));
 
-// HOME ROUTE
 App.get("/", (req, res) => {
-  res.send("Backend is running successfully");
+  res.status(200).send("Backend is running successfully");
 });
 
-// ADMIN ROUTES
-App.use("/admin", adminRoutes);
-
-// UPLOAD FOLDERS
-App.use("/uploads/category", express.static("uploads/category"));
-App.use("/uploads/product", express.static("uploads/product"));
-App.use("/uploads/subcategory", express.static("uploads/subcategory"));
-App.use("/uploads/subsubcategory", express.static("uploads/subsubcategory"));
-
-// WEBSITE ROUTES
-App.use("/web", webRoutes);
-
-
-// MONGODB CONNECTION
 mongoose
   .connect(process.env.DBCONNECTION)
-  .then(async () => {
+  .then(() => {
     console.log("MongoDB Connected Successfully");
-
-    let checkAdmin = await adminModel.findOne();
-
-    if (!checkAdmin) {
-      await adminModel.insertOne({
-        adminEmail: process.env.ADMINEMAIL,
-        adminPassword: process.env.ADMINPASSWORD,
-      });
-    }
   })
   .catch((error) => {
     console.log("MongoDB Connection Error:", error.message);
   });
 
-
-// EXPORT APP FOR VERCEL
 module.exports = App;
