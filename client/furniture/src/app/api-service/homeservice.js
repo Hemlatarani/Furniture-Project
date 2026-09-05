@@ -72,11 +72,9 @@
 import axios from "axios";
 
 // const apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL;
-const apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL;
-
-if (!apiBaseUrl) {
-  throw new Error("NEXT_PUBLIC_APIBASEURL is not defined at all");
-}
+const apiBaseUrl =
+  process.env.NEXT_PUBLIC_APIBASEURL ||
+  "https://furniture-project-orcin.vercel.app/";
 
 const api = axios.create({
   baseURL: apiBaseUrl,
