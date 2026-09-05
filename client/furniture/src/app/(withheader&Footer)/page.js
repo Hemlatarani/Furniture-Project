@@ -34,7 +34,7 @@ export default async function Home() {
 
   // let homeOrder=await orderapi()
 
-  let productData = await homeFeaturedProduct((categoryData[0]._id))
+  let productData = await homeFeaturedProduct((categoryData[0]?._id))
   console.log("productData:", productData)
   return (
     <>
