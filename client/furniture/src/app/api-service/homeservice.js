@@ -75,7 +75,7 @@ import axios from "axios";
 const apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL;
 
 if (!apiBaseUrl) {
-  throw new Error("NEXT_PUBLIC_APIBASEURL is not defined");
+  throw new Error("NEXT_PUBLIC_APIBASEURL is not defined at all");
 }
 
 const api = axios.create({
