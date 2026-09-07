@@ -85,7 +85,7 @@ const api = axios.create({
 
 const categoryapi = async () => {
   try {
-    const res = await api.get("home/category");
+    const res = await api.get("web/home/category");
 
     return res.data.categoryData.slice(0, 3);
   } catch (error) {
@@ -99,7 +99,7 @@ const categoryapi = async () => {
 
 const productApi = async (catId) => {
   try {
-    const res = await api.get(`home/product/${catId}`);
+    const res = await api.get(`web/home/product/${catId}`);
 
     return res.data;
   } catch (error) {
@@ -141,7 +141,7 @@ const bannerapi = async () => {
 
 const homeFeaturedProduct = async (catId) => {
   try {
-    const res = await api.get(`home/product/${catId}`);
+    const res = await api.get(`web/home/product/${catId}`);
 
     return res.data;
   } catch (error) {
@@ -159,7 +159,7 @@ const homeFeaturedProduct = async (catId) => {
 
 const productViewApi = async () => {
   try {
-    const res = await api.get("admin/product/view");
+    const res = await api.get("web/product/view");
 
     return res.data;
   } catch (error) {
@@ -187,7 +187,7 @@ const orderapi = async () => {
 
 const topRatedApi = async () => {
   try {
-    const res = await api.get("home/top-rated");
+    const res = await api.get("/web/home/top-rated");
 
     return res.data;
   } catch (error) {
