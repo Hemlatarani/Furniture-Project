@@ -159,7 +159,7 @@ const homeFeaturedProduct = async (catId) => {
 
 const productViewApi = async () => {
   try {
-    const res = await api.get("web/product/view");
+    const res = await api.get("admin/product/view");
 
     return res.data;
   } catch (error) {
@@ -173,7 +173,7 @@ const productViewApi = async () => {
 
 const orderapi = async () => {
   try {
-    const res = await api.get("web/product/view");
+    const res = await api.get("admin/product/view");
 
     return res.data;
   } catch (error) {
