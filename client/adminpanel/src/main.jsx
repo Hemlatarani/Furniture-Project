@@ -31,7 +31,7 @@ import Addcountry from './components/pages/Country/Addcountry';
 import ViewCountry from './components/pages/Country/Viewcountry';
 import AddTtestimonials from './components/pages/Testimonials/AddTtestimonials';
 import ViewTestimonials from './components/pages/Testimonials/ViewTestimonials';
-import AddFaq from './components/pages/faq/AddFaq';
+import AddFaq from './components/pages/Faq/AddFaq';
 import AddColor from './components/pages/Color/Addcolor';
 import Viewcolor from './components/pages/Color/Viewcolor';
 import ViewFaq from './components/pages/Faq/ViewFaq';
