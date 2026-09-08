@@ -111,17 +111,30 @@ const productApi = async (catId) => {
 
 // ================= HOME SELLING PRODUCTS =================
 
+// const homeSellingapi = async () => {
+//   try {
+//     const res = await axios.get("https://dummyjson.com/products");
+
+//     return res.data.products.slice(0, 15);
+//   } catch (error) {
+//     console.error("Home Selling API Error:", error);
+//     return [];
+//   }
+// };
+
 const homeSellingapi = async () => {
   try {
-    const res = await axios.get("https://dummyjson.com/products");
+    const res = await api.get("web/home/best-selling");
 
-    return res.data.products.slice(0, 15);
+    return res.data;
   } catch (error) {
     console.error("Home Selling API Error:", error);
-    return [];
+    return {
+      Sellingproduct: [],
+      staticPath: "",
+    };
   }
 };
-
 
 // ================= BANNER =================
 
