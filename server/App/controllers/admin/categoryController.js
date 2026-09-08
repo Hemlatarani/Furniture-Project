@@ -123,7 +123,7 @@ let categoryView = async (req, res) => {
     }
 
     let categoryCollection = await categoryModel.find().skip(skip).limit(limit)
-    categorylength = await categoryModel.find()
+     let categorylength = await categoryModel.find()
     let obj = {
         status: 1,
         msg: "category view",
