@@ -38,7 +38,7 @@ export default function Header() {
   }
 
   let showheader = (e) => {
-    axios.get(`${apiBaseurl}company-profile/details`)
+    axios.get(`${apiBaseurl}/web/company-profile/details`)
       .then((res) => res.data)
       .then((finalres) => {
         // console.log(finalres);

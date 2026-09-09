@@ -18,7 +18,7 @@ export default function Footer() {
     let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
 
     let handlefooter = () => {
-        axios.get(`${apiBaseurl}company-profile/details`)
+        axios.get(`${apiBaseurl}/web/company-profile/details`)
 
             .then((res) => res.data)
             .then((finalRes) => {
@@ -37,7 +37,7 @@ export default function Footer() {
 
     let dispatch = useDispatch()
     let TopProduct = () => {
-        axios.get(`${apiBaseurl}product/top-rated`)
+        axios.get(`${apiBaseurl}/web/product/top-rated`)
             .then((res => res.data))
             .then((FinalRes) => {
                 settRated(FinalRes.topData)

@@ -76,7 +76,7 @@ export default function MapLocation() {
 //         })
 //     }
     let getcompanyData=()=>{
-        axios.get(`${apiBaseUrl}company-profile/details`)
+        axios.get(`${apiBaseUrl}/web/company-profile/details`)
         .then((res)=>res.data)
         .then((finalData)=>{
             if(finalData.success){
