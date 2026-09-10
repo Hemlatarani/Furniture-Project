@@ -112,7 +112,7 @@ function CartLIstView() {
     let token = useSelector((store) => store.user.token)
     let { cart } = useSelector((store) => store.myCart)
 
-    let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
     let dispatch = useDispatch()
 
     // ✅ coupon state

@@ -23,7 +23,7 @@ export default function Header() {
   let loginuser = useSelector((myStore) => myStore.user.user)
 
   let [showoutput, setshowoutput] = useState("")
-  let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+  let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
   let [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   let [mounted, setMounted] = useState(false)

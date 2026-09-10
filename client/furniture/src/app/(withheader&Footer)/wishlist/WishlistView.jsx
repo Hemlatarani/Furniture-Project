@@ -11,7 +11,7 @@ export default function Wishlist() {
     let wishlist = useSelector((store) => store.mywishlist.items)
     let cart = useSelector((store) => store.myCart.cart)
     let token = useSelector((store) => store.user.token)
-    let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
     let dispatch = useDispatch()
 
     let addToCart = (item) => {

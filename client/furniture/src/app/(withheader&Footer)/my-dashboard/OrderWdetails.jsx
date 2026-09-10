@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 export default function OrderDetails({ id }) {
-  let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+  let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
   let token = useSelector((store) => store.user.token)
   let router = useRouter()
   let [order, setOrder] = useState(null)

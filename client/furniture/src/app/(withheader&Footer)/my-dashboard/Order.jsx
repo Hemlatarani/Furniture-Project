@@ -7,7 +7,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 
 export default function Order() {
-    let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
 
     let [orderData, setOrderData] = useState([])
     let router=useRouter()

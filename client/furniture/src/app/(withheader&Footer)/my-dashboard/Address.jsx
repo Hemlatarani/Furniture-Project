@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 export default function Address() {
     let token = useSelector((store) => store.user.token)
     let userId = useSelector((store) => store.user.id)
-    let apiBAseUrl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBAseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
     let [billingFormVal, setBillingFormVal] = useState({
         billingName: "",
         billingEmail: "",

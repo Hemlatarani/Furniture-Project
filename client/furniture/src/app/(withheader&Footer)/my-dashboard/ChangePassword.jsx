@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function ChangePassword() {
     
-    let apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
     // let token = useSelector((store) => store.myCart.token)
 
     let token = useSelector((store)=> store.user.token)

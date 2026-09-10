@@ -5,7 +5,7 @@ import axios from "axios";
 // .then(res => res.data)
 // .then((finalRes)=>finalRes.products);
 // }
- let apibaseurl=process.env.NEXT_PUBLIC_APIBASEURL
+ let apibaseurl=process.env.NEXT_PUBLIC_API_BASE_URL
 let singleProduct = (slug) =>{
   console.log("slug received:", slug)
   return axios.get(`${apibaseurl}product/product-details/${slug}`)

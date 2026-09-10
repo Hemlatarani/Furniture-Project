@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL;
+let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 // Async thunk - backend se cart data fetch karta hai
 export let fetchCartData = createAsyncThunk("cart/fetchCartData", async (token) => {

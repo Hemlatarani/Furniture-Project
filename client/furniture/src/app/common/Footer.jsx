@@ -15,7 +15,7 @@ export default function Footer() {
     let [imagePath, setimagePath] = useState("")
     let router = useRouter()
 
-    let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
 
     let handlefooter = () => {
         axios.get(`${apiBaseurl}/web/company-profile/details`)

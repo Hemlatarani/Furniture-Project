@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function MapLocation() {
 
-    let apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
 
     let [AcompanyData,setAcompanytData]=useState({})
     let [btnLoading, setBtnLoading] = useState(false)

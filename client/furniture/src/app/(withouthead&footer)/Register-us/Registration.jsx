@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function Register() {
 
-    let apiBaseUrl =process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseUrl =process.env.NEXT_PUBLIC_API_BASE_URL
 
     let [form, setForm] = useState(true)
     let [otpForm, setOtpForm] = useState(false)

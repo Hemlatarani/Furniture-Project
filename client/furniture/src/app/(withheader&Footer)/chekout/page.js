@@ -195,7 +195,7 @@ export default function Checkout() {
   let token = useSelector((store) => store.user.token);
   let userId = useSelector((store) => store.user.user?.id);
   let cartData = useSelector((store) => store.myCart.cart);
-  let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL;
+  let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   useEffect(() => {
     if (token) {

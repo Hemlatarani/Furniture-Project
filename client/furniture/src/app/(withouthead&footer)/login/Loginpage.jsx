@@ -168,7 +168,7 @@ import Link from 'next/link';
 
 export default function Loginpage() {
 
-  let apiBaseUrl = process.env.NEXT_PUBLIC_APIBASEURL;
+  let apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   console.log(apiBaseUrl);
 

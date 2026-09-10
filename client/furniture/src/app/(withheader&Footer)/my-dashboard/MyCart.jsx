@@ -9,7 +9,7 @@ export default function MyCart() {
     let token = useSelector((store) => store.user.token)
     let { cart } = useSelector((store) => store.myCart)
     let dispatch = useDispatch()
-    let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
 
     useEffect(() => {
         if (token) dispatch(fetchCartData(token))

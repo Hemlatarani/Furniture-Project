@@ -37,7 +37,7 @@ export default function ProductCart({ data,imagePath }) {
         );
     }, []);
 
-    let apiBaseurl = process.env.NEXT_PUBLIC_APIBASEURL
+    let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
     let token = useSelector((store) => store.user.token)
 
     // console.log(token);
