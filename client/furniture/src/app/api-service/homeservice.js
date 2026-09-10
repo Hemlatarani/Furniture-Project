@@ -124,7 +124,7 @@ const productApi = async (catId) => {
 
 const homeSellingapi = async () => {
   try {
-    const res = await api.get("/web/home/best-selling");
+    const res = await api.get("web/home/best-selling");
 
     return res.data;
   } catch (error) {
@@ -200,7 +200,7 @@ const orderapi = async () => {
 
 const topRatedApi = async () => {
   try {
-    const res = await api.get("/web/home/top-rated");
+    const res = await api.get("web/home/top-rated");
 
     return res.data;
   } catch (error) {

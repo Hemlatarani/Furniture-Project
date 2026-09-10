@@ -49,7 +49,7 @@ let token = useSelector((store) => store.user.token)
 let apiBaseurl = process.env.NEXT_PUBLIC_API_BASE_URL
 
   let getProduct = () => {
-    axios.get(`${apiBaseurl}/web/home/best-selling`)
+    axios.get(`${apiBaseurl}web/home/best-selling`)
       .then((res) => res.data)
       .then((finalres) => {
         // console.log(finalres.Sellingproduct)
