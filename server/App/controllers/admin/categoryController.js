@@ -45,7 +45,7 @@ let categoryCreate = async (req, res) => {
 
     let categoryobj = { ...req.body }
 
-    console.log('=== Category Create Request ===')
+    console.log('=== Category Create Request send hello  ===')
     console.log('Body:', req.body)
     console.log('File:', req.file)
 
