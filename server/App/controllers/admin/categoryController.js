@@ -41,90 +41,71 @@ const { categoryModel } = require("../../models/categoryModel")
 // }
 
 
-// let categoryCreate = async (req, res) => {
+let categoryCreate = async (req, res) => {
 
-//     let categoryobj = { ...req.body }
+    let categoryobj = { ...req.body }
 
-//     console.log('=== Category Create Request send hello  ===')
-//     console.log('Body:', req.body)
-//     console.log('File:', req.file)
+    console.log('=== Category Create Request send hello  ===')
+    console.log('Body:', req.body)
+    console.log('File:', req.file)
 
-//     let obj
+    let obj
 
-//     if (req.file) {
-//         if (req.file.filename) {
-//             categoryobj.categoryImage = req.file.filename
-//         }
-//     }
+    if (req.file) {
+        if (req.file.filename) {
+            categoryobj.categoryImage = req.file.filename
+        }
+    }
 
 
-//     try {
+    try {
 
-//         let SendData = await categoryModel.create(categoryobj)
+        let SendData = await categoryModel.create(categoryobj)
         
-//         console.log('Category created successfully:', SendData)
+        console.log('Category created successfully:', SendData)
 
-//         obj = {
-//             status: 1,
-//             msg: " category Added",
-//             SendData
-//         }
+        obj = {
+            status: 1,
+            msg: " category Added",
+            SendData
+        }
 
-//         return res.status(200).json(obj)
-
-
-//     }
-
-//     catch (err) {
-
-//         console.error('Category creation error:', err)
-
-//         let obj = {
-
-//             status: 0,
-//             msg: "Server Error",
-
-//         }
+        return res.status(200).json(obj)
 
 
-//         if (err.name === "ValidationError") {
+    }
 
-//             obj.msg = "Check field value"
+    catch (err) {
 
-//         }
-//         else if (err.code === 11000) {
-//             obj.msg = "Value Already Exits "
+        console.error('Category creation error:', err)
 
-//         }
-//         else if (err.name === "castaError") {
-//             obj.msg = "Invalid data type"
-//         }
+        let obj = {
 
-//         return res.status(400).json(obj)
+            status: 0,
+            msg: "Server Error",
+
+        }
 
 
-//     }
+        if (err.name === "ValidationError") {
 
-// }
-categoryRoutes.post(
-    "/create",
+            obj.msg = "Check field value"
 
-    (req, res, next) => {
-        console.log("===== CATEGORY ROUTE START =====")
-        next()
-    },
+        }
+        else if (err.code === 11000) {
+            obj.msg = "Value Already Exits "
 
-    upload.single("categoryImage"),
+        }
+        else if (err.name === "castaError") {
+            obj.msg = "Invalid data type"
+        }
 
-    (req, res, next) => {
-        console.log("===== MULTER SUCCESS =====")
-        console.log("BODY:", req.body)
-        console.log("FILE:", req.file)
-        next()
-    },
+        return res.status(400).json(obj)
 
-    categoryCreate
-)
+
+    }
+
+}
 
 
 let categoryView = async (req, res) => {

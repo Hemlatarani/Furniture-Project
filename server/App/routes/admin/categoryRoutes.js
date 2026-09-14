@@ -68,7 +68,22 @@ const upload = multer({ storage: storage })
 
 categoryRoutes.post(
     "/create",
-    upload.single('categoryImage'),
+
+    (req, res, next) => {
+        console.log("===== CATEGORY ROUTE START =====")
+        console.log("BODY BEFORE MULTER:", req.body)
+        next()
+    },
+
+    upload.single("categoryImage"),
+
+    (req, res, next) => {
+        console.log("===== MULTER SUCCESS =====")
+        console.log("BODY:", req.body)
+        console.log("FILE:", req.file)
+        next()
+    },
+
     categoryCreate
 )
 
