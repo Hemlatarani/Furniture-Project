@@ -21,6 +21,21 @@ const { orderRoutes } = require("./orderRoute");
 
 
 let adminRoutes=express.Router()
+// console.log("adminauthRoutes:", adminauthRoutes)
+// console.log("colorRoutes:", colorRoutes)
+// console.log("countryRoutes:", countryRoutes)
+// console.log("materialRoutes:", materialRoutes)
+// console.log("faqRoutes:", faqRoutes)
+// console.log("categoryRoutes:", categoryRoutes)
+// console.log("sliderRoutes:", sliderRoutes)
+// console.log("testimonialRoutes:", testimonialRoutes)
+// console.log("wchooseRoutes:", wchooseRoutes)
+// console.log("subcategoryRoutes:", subcategoryRoutes)
+// console.log("subsubcategoryRoutes:", subsubcategoryRoutes)
+// console.log("productRoutes:", productRoutes)
+// console.log("enquiryRoutes:", enquiryRoutes)
+// console.log("admincompanyRoutes:", admincompanyRoutes)
+// console.log("orderRoutes:", orderRoutes)
 
 adminRoutes.use("/auth",adminauthRoutes)
 adminRoutes.use("/color",colorRoutes)

@@ -72,7 +72,7 @@ export default function Addcategory() {
       .then((res) => res.data)
       .then((finalres) => {
 
-        console.log(finalres);
+        console.log("category Api Response",finalres);
 
         if (finalres.status == 1) {
           toast.success(finalres.msg)
