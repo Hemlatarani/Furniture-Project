@@ -70,15 +70,16 @@ categoryRoutes.post(
     "/create",
 
     (req, res, next) => {
-        console.log("===== CATEGORY ROUTE START =====")
-        console.log("BODY BEFORE MULTER:", req.body)
+        console.log("🔥🔥🔥 CATEGORY POST ROUTE HIT 🔥🔥🔥")
+        console.log("METHOD:", req.method)
+        console.log("URL:", req.originalUrl)
         next()
     },
 
     upload.single("categoryImage"),
 
     (req, res, next) => {
-        console.log("===== MULTER SUCCESS =====")
+        console.log("🔥🔥🔥 MULTER SUCCESS 🔥🔥🔥")
         console.log("BODY:", req.body)
         console.log("FILE:", req.file)
         next()
