@@ -48,7 +48,7 @@ const storage = multer.diskStorage({
         console.log("MULTER DESTINATION RUNNING")
         console.log("FILE:", file)
 
-        cb(null, "uploads/category")
+        cb(null, "/uploads/category")
 
     },
 
