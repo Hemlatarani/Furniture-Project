@@ -96,7 +96,7 @@ let categoryCreate = async (req, res) => {
             obj.msg = "Value Already Exits "
 
         }
-        else if (err.name === "castaError") {
+        else if (err.name === "CastaError") {
             obj.msg = "Invalid data type"
         }
 

@@ -78,14 +78,32 @@ categoryRoutes.post(
 
     upload.single("categoryImage"),
 
-    (req, res, next) => {
-        console.log("🔥🔥🔥 MULTER SUCCESS 🔥🔥🔥")
-        console.log("BODY:", req.body)
-        console.log("FILE:", req.file)
-        next()
-    },
+(err, req, res, next) => {
+    if (err) {
+        console.error("🔥🔥🔥 MULTER ERROR 🔥🔥🔥")
+        console.error("ERROR NAME:", err.name)
+        console.error("ERROR MESSAGE:", err.message)
+        console.error("FULL ERROR:", err)
 
-    categoryCreate
+        return res.status(500).json({
+            status: 0,
+            msg: "Multer Error",
+            error: err.message
+        })
+    }
+
+    next()
+},
+
+(req, res, next) => {
+    console.log("🔥🔥🔥 MULTER SUCCESS 🔥🔥🔥")
+    console.log("BODY:", req.body)
+    console.log("FILE:", req.file)
+    next()
+},
+
+categoryCreate
+
 )
 
 categoryRoutes.get("/view", categoryView)
